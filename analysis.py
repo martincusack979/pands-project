@@ -12,22 +12,30 @@ iris = pd.read_csv(r"C:\Users\cusac\OneDrive\Desktop\iris.csv") # open Fisher's 
 #print(iris.shape)                                               # display number of rows and columns using .shape attribute
 #print(iris.describe())                                          # display some basic information on data set using .describe() method
 
-print(iris["SepalLengthCm"].mean())                             # Generate some summary statistics on SepalLength Cm column. Firstly, output the mean length with .mean()
-print(iris["SepalLengthCm"].median())                           # Secondly, output the median length using .median()
-print(iris["SepalLengthCm"].min())                              # Output the lowest value using .min()
-print(iris["SepalLengthCm"].max())                              # Output the highest vaklue using .max()
+SepalLengthCm_stats = (iris["SepalLengthCm"].mean(),                             # Generate summary statistics on SepalLength Cm column. Firstly, output the mean length with .mean()
+iris["SepalLengthCm"].median(),                                                  # Output the median length using .median()
+iris["SepalLengthCm"].min(),                                                     # Output the lowest value using .min()
+iris["SepalLengthCm"].max())                                                     # Output the highest value using .max()
 
-print(iris["SepalWidthCm"].mean())                              # Generate some summary statistics on SepalWidth Cm column, as above
-print(iris["SepalWidthCm"].median()) 
-print(iris["SepalWidthCm"].min()) 
-print(iris["SepalWidthCm"].max()) 
+print(SepalLengthCm_stats)
 
-print(iris["PetalLengthCm"].mean())                              # Generate some summary statistics on PetalLength Cm column, as above
-print(iris["PetalLengthCm"].median()) 
-print(iris["PetalLengthCm"].min()) 
-print(iris["PetalLengthCm"].max()) 
+SepalWidthCm_stats = (iris["SepalWidthCm"].mean(),                              # Generate summary statistics on SepalWidth Cm column, as above
+iris["SepalWidthCm"].median(),                                                  
+iris["SepalWidthCm"].min(),                                                     
+iris["SepalWidthCm"].max())                                                     
 
-print(iris["PetalWidthCm"].mean())                              # Generate some summary statistics on PetalWidth Cm column, as above
-print(iris["PetalWidthCm"].median()) 
-print(iris["PetalWidthCm"].min()) 
-print(iris["PetalWidthCm"].max()) 
+print(SepalWidthCm_stats)
+
+PetalLengthCm_stats = (iris["PetalLengthCm"].mean(),                             # Generate summary statistics on PetalLength Cm column, as above
+iris["PetalLengthCm"].median(),                                                   
+iris["PetalLengthCm"].min(),                                                      
+iris["PetalLengthCm"].max())                                                     
+
+print(PetalLengthCm_stats)
+
+PetalWidthCm_stats = (iris["PetalWidthCm"].mean(),                            # Generate some summary statistics on PetalWidth Cm column, as above
+iris["PetalWidthCm"].median(),
+iris["PetalWidthCm"].min(),
+iris["PetalWidthCm"].max())
+
+print(PetalWidthCm_stats)
