@@ -34,15 +34,29 @@ iris["PetalLengthCm"].max())
 
 print(PetalLengthCm_stats)
 
-PetalWidthCm_stats = (iris["PetalWidthCm"].mean(),                            # Generate some summary statistics on PetalWidth Cm column, as above
+PetalWidthCm_stats = (iris["PetalWidthCm"].mean(),                                # Generate some summary statistics on PetalWidth Cm column, as above
 iris["PetalWidthCm"].median(),
 iris["PetalWidthCm"].min(),
 iris["PetalWidthCm"].max())
 
 print(PetalWidthCm_stats)
 
-with open('summary.txt', 'w') as f:                                              # generate text file and write all summary statistics to it
-    f.write('Summary statistics: ' + str(SepalLengthCm_stats) + str (SepalWidthCm_stats) + str (PetalLengthCm_stats) +  str (PetalWidthCm_stats))
+with open('summary.txt', 'w') as f:                                               # generate text file and write summary statistics for Sepal Length 
+    f.write('Sepal Length Cm: Mean, Median, Min and Max = ' + str(SepalLengthCm_stats))
+    f.write('\n')                                                                 # use '\n' to create new line in text file
+
+with open('summary.txt', 'a') as f:                                               # append summary stats for Sepal Width using the argument 'a' 
+    f.write('Sepal Width Cm: Mean, Median, Min and Max = ' + str(SepalWidthCm_stats))
+    f.write('\n')
+
+with open('summary.txt', 'a') as f:                                               # append stats for Petal Length
+    f.write('Petal Length Cm: Mean, Median, Min and Max = ' + str(PetalLengthCm_stats))   
+    f.write('\n')
+
+with open('summary.txt', 'a') as f:                                               # append stats for Petal Width
+    f.write('Petal Width Cm: Mean, Median, Min and Max = ' + str(PetalLengthCm_stats))  
+    f.write('\n')
+    
 
 
 
