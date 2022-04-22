@@ -2,15 +2,16 @@
 
 # Author: Martin Cusack
                                                                     
+from re import L
 import numpy as np
-import matplotlib as pyplot
+import matplotlib.pyplot as plt
 import pandas as pd                                                  # use pandas to analyse data because Iris data set is in tabular format
 
 iris = pd.read_csv(r"C:\Users\cusac\OneDrive\Desktop\iris.csv")      # open Fisher's iris data set CSV file using pandas
-#print(iris.head())                                                  # view first five rows of data frame using .head() method
-#print(iris.info())                                                  # display names of columns and the data types they contain using .info() method
-#print(iris.shape)                                                   # display number of rows and columns using .shape attribute
-#print(iris.describe())                                              # display some basic information on data set using .describe() method
+print(iris.head())                                                  # view first five rows of data frame using .head() method
+print(iris.info())                                                  # display names of columns and the data types they contain using .info() method
+print(iris.shape)                                                   # display number of rows and columns using .shape attribute
+print(iris.describe())                                              # display some basic information on data set using .describe() method
 
 SepalLengthCm_stats = (iris["SepalLengthCm"].mean(),                             # Generate summary statistics on SepalLength Cm column. Firstly, output the mean length with .mean()
 iris["SepalLengthCm"].median(),                                                  # Output the median length using .median()
@@ -57,6 +58,19 @@ with open('summary.txt', 'a') as f:                                             
     f.write('Petal Width Cm: Mean, Median, Min and Max = ' + str(PetalLengthCm_stats))  
     f.write('\n')
     
+ 
+iris.hist(column = "SepalLengthCm")                                             # use matplotlib to output histograms for each column
+plt.show()
+plt.savefig('sepallength.png') 
 
+iris.hist(column = "SepalWidthCm")
+plt.show()
+plt.savefig('sepalwidth.png') 
 
+iris.hist(column = "PetalLengthCm")
+plt.show()
+plt.savefig('petallength.png') 
 
+iris.hist(column = "PetalWidthCm")
+plt.show()
+plt.savefig('petalwidth.png') 
