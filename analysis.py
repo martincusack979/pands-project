@@ -2,7 +2,6 @@
 
 # Author: Martin Cusack
                                                                     
-from re import L
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd                                                  # use pandas to analyse data because Iris data set is in tabular format
@@ -60,15 +59,23 @@ with open('summary.txt', 'a') as f:                                             
     
  
 iris.hist(column = "SepalLengthCm")                                             # use matplotlib to output histograms for each column
-plt.savefig('sepallength.png') 
+plt.savefig('sepallength.png')                                              
+#plt.show()
 
 iris.hist(column = "SepalWidthCm")
 plt.savefig('sepalwidth.png') 
+#plt.show()
 
 iris.hist(column = "PetalLengthCm")
 plt.savefig('petallength.png') 
+#plt.show()
 
 iris.hist(column = "PetalWidthCm")
 plt.savefig('petalwidth.png') 
+#plt.show()
 
-# use matplotlib to create scatter plots of each pair of variables
+sepal_Scatter= iris.plot.scatter(x='SepalLengthCm', y='SepalWidthCm', c='Blue')                          # use matplotlib to create scatter plot of SepalLength and Width, specify colour = blue
+plt.show()
+
+petal_Scatter= iris.plot.scatter(x='PetalLengthCm', y='PetalWidthCm', c='Blue')                          # use matplotlib to create scatter plot of Petal Length and Width
+plt.show()
