@@ -76,7 +76,7 @@ For information on how to perform this, I checked the information at: https://pa
 #### Creating box plots and violin plots
 
 Using a box plot, I could provide a better visual representation of the distribution of sepal and petal length across all three species of iris.  To do this, 
-I firstly imported the seaborn package using "import seaborn as sns".  I then created the box plot using ***"box = sns.boxplot(x="Species", y="SepalLengthCm", 
+I firstly imported the seaborn package using ***"import seaborn as sns".***  I then created the box plot using ***"box = sns.boxplot(x="Species", y="SepalLengthCm", 
 data=iris)":***  specifying the iris data frame info was required with the "data" argument and placing "Species" on the x axis and "Sepal LengthCm" on the y axis. 
 I then repeated these steps for the Petal LengthCm data.
 
