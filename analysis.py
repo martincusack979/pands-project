@@ -1,16 +1,16 @@
-# Programming and Scripting Module Final Project
+# Programming and Scripting Module: Final Project
 
-# Author: Martin Cusack
+# Author: Martin Cusack   Student No.: G00239124
                                                                     
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd                                                  # use pandas to analyse data because Iris data set is in tabular format
+import pandas as pd                                                                 # use pandas to analyse data because Iris data set is in tabular format
 
-iris = pd.read_csv(r"C:\Users\cusac\OneDrive\Desktop\iris.csv")      # open Fisher's iris data set CSV file using pandas
-print(iris.head())                                                  # view first five rows of data frame using .head() method
-print(iris.info())                                                  # display names of columns and the data types they contain using .info() method
-print(iris.shape)                                                   # display number of rows and columns using .shape attribute
-print(iris.describe())                                              # display some basic information on data set using .describe() method
+iris = pd.read_csv(r"C:\Users\cusac\OneDrive\Desktop\iris.csv")                     # open Fisher's iris data set CSV file using pandas
+print(iris.head())                                                                  # view first five rows of data frame using .head() method
+print(iris.info())                                                                  # display names of columns and the data types they contain using .info() method
+print(iris.shape)                                                                   # display number of rows and columns using .shape attribute
+print(iris.describe())                                                              # display some basic information on data set using .describe() method
 
 SepalLengthCm_stats = (iris["SepalLengthCm"].mean(),                             # Generate summary statistics on SepalLength Cm column. Firstly, output the mean length with .mean()
 iris["SepalLengthCm"].median(),                                                  # Output the median length using .median()
@@ -58,32 +58,38 @@ with open('summary.txt', 'a') as f:                                             
     f.write('\n')
     
  
-#iris.hist(column = "SepalLengthCm")                                             # use matplotlib to output histograms for each column
-#plt.savefig('sepallength.png')                                              
-#plt.show()
+iris.hist(column = "SepalLengthCm")                                               # use matplotlib to output histograms for each column
+plt.savefig('sepallength.png')                                              
+plt.show()
 
-#iris.hist(column = "SepalWidthCm")
-#plt.savefig('sepalwidth.png') 
-#plt.show()
+iris.hist(column = "SepalWidthCm")
+plt.savefig('sepalwidth.png') 
+plt.show()
 
-#iris.hist(column = "PetalLengthCm")
-#plt.savefig('petallength.png') 
-#plt.show()
+iris.hist(column = "PetalLengthCm")
+plt.savefig('petallength.png') 
+plt.show()
 
-#iris.hist(column = "PetalWidthCm")
-#plt.savefig('petalwidth.png') 
-#plt.show()
+iris.hist(column = "PetalWidthCm")
+plt.savefig('petalwidth.png') 
+plt.show()
 
-#sepal_Scatter= iris.plot.scatter(x='SepalLengthCm', y='SepalWidthCm', c='Blue')   # use matplotlib to create scatter plot of SepalLength and Width, specify colour = blue
-#plt.show()
+sepal_Scatter= iris.plot.scatter(x='SepalLengthCm', y='SepalWidthCm', c='Blue')   # use matplotlib to create scatter plot of SepalLength and Width, specify colour = blue
+plt.show()
 
-#petal_Scatter= iris.plot.scatter(x='PetalLengthCm', y='PetalWidthCm', c='Red')   # use matplotlib to create scatter plot of Petal Length and Width, specify colour = red
-#plt.show()
+petal_Scatter= iris.plot.scatter(x='PetalLengthCm', y='PetalWidthCm', c='Red')    # use matplotlib to create scatter plot of Petal Length and Width, specify colour = red
+plt.show()
 
 import seaborn as sns
 
-box = sns.boxplot(x="Species", y="SepalLengthCm", data=iris)                    # use seaborn to create box plot displaying distribution of Sepal Length across different species
+box_Sepal = sns.boxplot(x="Species", y="SepalLengthCm", data=iris)                    # use seaborn to create box plot displaying distribution of Sepal Length across different species
 plt.show()
 
-box = sns.boxplot(x="Species", y="PetalLengthCm", data=iris)                    # use seaborn to create box plot displaying distribution of Petal Length across different species
+box_Petal = sns.boxplot(x="Species", y="PetalLengthCm", data=iris)                    # use seaborn to create box plot displaying distribution of Petal Length across different species
+plt.show()
+
+violin_Sepal = sns.violinplot(x="Species", y="SepalLengthCm", data=iris)              # use seaborn to create violin plot of Sepal Length data
+plt.show()
+
+violin_Petal = sns.violinplot(x="Species", y="PetalLengthCm", data=iris)              # use seaborn to create violin plot of Petal Length data
 plt.show()
