@@ -46,31 +46,29 @@ with open('summary.txt', 'w') as f:                                             
     f.write('Sepal Length Cm: Mean, Median, Min and Max = ' + str(SepalLengthCm_stats))
     f.write('\n')                                                                 # use '\n' to create new line in text file
 
-with open('summary.txt', 'a') as f:                                               # append summary stats for Sepal Width using the argument 'a' 
+with open('summary.txt', 'a') as f:                                               # append summary stats for Sepal Width Cm using the argument 'a' 
     f.write('Sepal Width Cm: Mean, Median, Min and Max = ' + str(SepalWidthCm_stats))
     f.write('\n')
 
-with open('summary.txt', 'a') as f:                                               # append stats for Petal Length
+with open('summary.txt', 'a') as f:                                               # append stats for Petal Length Cm
     f.write('Petal Length Cm: Mean, Median, Min and Max = ' + str(PetalLengthCm_stats))   
     f.write('\n')
 
-with open('summary.txt', 'a') as f:                                               # append stats for Petal Width
+with open('summary.txt', 'a') as f:                                               # append stats for Petal Width Cm
     f.write('Petal Width Cm: Mean, Median, Min and Max = ' + str(PetalLengthCm_stats))  
     f.write('\n')
     
  
 iris.hist(column = "SepalLengthCm")                                             # use matplotlib to output histograms for each column
-plt.show()
 plt.savefig('sepallength.png') 
 
 iris.hist(column = "SepalWidthCm")
-plt.show()
 plt.savefig('sepalwidth.png') 
 
 iris.hist(column = "PetalLengthCm")
-plt.show()
 plt.savefig('petallength.png') 
 
 iris.hist(column = "PetalWidthCm")
-plt.show()
 plt.savefig('petalwidth.png') 
+
+# use matplotlib to create scatter plots of each pair of variables
