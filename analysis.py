@@ -58,24 +58,32 @@ with open('summary.txt', 'a') as f:                                             
     f.write('\n')
     
  
-iris.hist(column = "SepalLengthCm")                                             # use matplotlib to output histograms for each column
-plt.savefig('sepallength.png')                                              
+#iris.hist(column = "SepalLengthCm")                                             # use matplotlib to output histograms for each column
+#plt.savefig('sepallength.png')                                              
 #plt.show()
 
-iris.hist(column = "SepalWidthCm")
-plt.savefig('sepalwidth.png') 
+#iris.hist(column = "SepalWidthCm")
+#plt.savefig('sepalwidth.png') 
 #plt.show()
 
-iris.hist(column = "PetalLengthCm")
-plt.savefig('petallength.png') 
+#iris.hist(column = "PetalLengthCm")
+#plt.savefig('petallength.png') 
 #plt.show()
 
-iris.hist(column = "PetalWidthCm")
-plt.savefig('petalwidth.png') 
+#iris.hist(column = "PetalWidthCm")
+#plt.savefig('petalwidth.png') 
 #plt.show()
 
-sepal_Scatter= iris.plot.scatter(x='SepalLengthCm', y='SepalWidthCm', c='Blue')                          # use matplotlib to create scatter plot of SepalLength and Width, specify colour = blue
+#sepal_Scatter= iris.plot.scatter(x='SepalLengthCm', y='SepalWidthCm', c='Blue')   # use matplotlib to create scatter plot of SepalLength and Width, specify colour = blue
+#plt.show()
+
+#petal_Scatter= iris.plot.scatter(x='PetalLengthCm', y='PetalWidthCm', c='Red')   # use matplotlib to create scatter plot of Petal Length and Width, specify colour = red
+#plt.show()
+
+import seaborn as sns
+
+box = sns.boxplot(x="Species", y="SepalLengthCm", data=iris)                    # use seaborn to create box plot displaying distribution of Sepal Length across different species
 plt.show()
 
-petal_Scatter= iris.plot.scatter(x='PetalLengthCm', y='PetalWidthCm', c='Blue')                          # use matplotlib to create scatter plot of Petal Length and Width
+box = sns.boxplot(x="Species", y="PetalLengthCm", data=iris)                    # use seaborn to create box plot displaying distribution of Petal Length across different species
 plt.show()
